@@ -46,13 +46,20 @@
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: Seravek, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Segoe UI", Arial, "Helvetica Neue", -apple-system, system-ui, sans-serif;
+    font-weight: 500;
     line-height: 1.55;
     direction: rtl;
     text-align: right;
   }
-  .display { font-family: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif; }
-  .num, time, .code { font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-variant-numeric: tabular-nums; }
+  .display { font-family: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif; font-weight: 700; }
+  .num, time, .code {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+  a[href^="tel:"] { direction: ltr; unicode-bidi: isolate; }
 
   a { color: var(--accent2); }
 
