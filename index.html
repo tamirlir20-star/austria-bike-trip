@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>טיול אופניים ורוגע לאוסטריה</title>
+<title>טיול אופניים ורוגע באוסטריה</title>
 <style>
   :root {
     --bg: #F6F2E7;
@@ -105,16 +105,15 @@
       linear-gradient(180deg, color-mix(in srgb, var(--accent2) 14%, var(--bg)) 0%, var(--bg) 78%);
     border-bottom: 1px solid var(--line);
   }
-  .hero-scene { display: block; width: 100%; height: auto; margin-bottom: 0.6rem; }
   .eyebrow {
     display: inline-flex; align-items: center; gap: 0.4rem;
     color: var(--accent-ink); background: var(--accent2);
     font-size: 0.78rem; letter-spacing: 0.03em; font-weight: 700;
     padding: 0.3rem 0.75rem; border-radius: 999px; margin: 0 0 0.75rem;
   }
-  h1 { font-size: clamp(1.6rem, 7vw, 2.15rem); margin: 0 0 0.55rem; line-height: 1.2; }
-  .sub { color: var(--ink-soft); font-size: 1.02rem; margin: 0 0 1.4rem; }
-  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+  h1 { font-size: clamp(1.6rem, 7vw, 2.15rem); margin: 0 0 0.55rem; line-height: 1.2; text-align: center; }
+  .sub { color: var(--ink-soft); font-size: 1.02rem; margin: 0 0 1.4rem; text-align: center; }
+  .stat-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
   .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0.7rem 0.8rem; box-shadow: var(--shadow); }
   .stat-label { font-size: 0.72rem; color: var(--ink-soft); margin: 0 0 0.2rem; }
   .stat-num { font-size: 1.05rem; font-weight: 700; }
@@ -262,18 +261,11 @@
 
 <header class="hero">
   <div class="wrap">
-    <svg class="hero-scene" viewBox="0 0 560 60" role="img" aria-label="נהר וגדות מיוערות">
-      <circle cx="480" cy="28" r="20" fill="var(--gold)" opacity="0.9"/>
-      <g opacity="0.8" fill="var(--moss)">
-        <circle cx="50" cy="44" r="9"/><circle cx="66" cy="36" r="7"/><circle cx="34" cy="34" r="6"/>
-        <circle cx="150" cy="42" r="8"/><circle cx="164" cy="34" r="6"/>
-      </g>
-    </svg>
-    <h1 class="display">טיול אופניים ורוגע לאוסטריה</h1>
+    <h1 class="display">טיול אופניים ורוגע באוסטריה</h1>
+    <p class="sub">🚴 רכיבה מפסאו לקרמס</p>
     <div class="stat-row">
       <div class="stat"><p class="stat-label">📅 תאריך</p><p class="stat-num num">14–19.9.26</p></div>
       <div class="stat"><p class="stat-label">🌙 לינה</p><p class="stat-num">5 לילות</p></div>
-      <div class="stat"><p class="stat-label">🚴 רכיבה</p><p class="stat-num">מפסאו לקרמס</p></div>
     </div>
   </div>
 </header>
