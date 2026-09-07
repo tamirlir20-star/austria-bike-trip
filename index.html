@@ -194,16 +194,6 @@
   .info-card .opt { color: var(--ink-soft); }
   .info-card .opt::before { content: "אופציונלי · "; font-size: 0.78rem; color: var(--accent); }
 
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer;
-    font: inherit; font-size: 0.92rem; font-weight: 700;
-    padding: 0.65rem 1.1rem; border-radius: 999px; border: 1px solid var(--line);
-    background: var(--accent2); color: #fff; box-shadow: var(--shadow);
-  }
-  .btn .chev { transition: transform 0.2s ease; }
-  .btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
-
-  .checklist-panel { margin-top: 1rem; }
   .progress {
     display: flex; align-items: center; gap: 0.7rem; margin: 0 0 1.2rem;
     background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
@@ -250,7 +240,7 @@
     <li><a href="#hotels"><span class="ic">🏨</span>בתי מלון</a></li>
     <li><a href="#lineup"><span class="ic">🚴</span>לו״ז</a></li>
     <li><a href="#gear"><span class="ic">🎒</span>ציוד ולבוש</a></li>
-    <li><a href="#checklist" id="navChecklist"><span class="ic">📋</span>מה להביא לטיול</a></li>
+    <li><a href="#checklist"><span class="ic">📋</span>מה להביא לטיול</a></li>
   </ul>
 </nav>
 
@@ -486,33 +476,29 @@
       </ul>
     </div>
 
-    <div id="checklist">
-      <button type="button" class="btn" id="checklistToggle" aria-expanded="false" aria-controls="checklistPanel">
-        📋 מה להביא לטיול <span class="chev">▾</span>
-      </button>
+  </section>
 
-      <div class="checklist-panel" id="checklistPanel" style="display:none">
-        <div class="progress">
-          <span class="progress-label" id="progressLabel">0 / 0 ארוז</span>
-          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-        </div>
-        <div class="cat">
-          <p class="cat-title">תעודות ומסמכים</p>
-          <ul class="item-list" data-cat="docs"></ul>
-        </div>
-        <div class="cat">
-          <p class="cat-title">ביגוד והנעלה</p>
-          <ul class="item-list" data-cat="clothes"></ul>
-        </div>
-        <div class="cat">
-          <p class="cat-title">אופציונלי</p>
-          <ul class="item-list" data-cat="optional"></ul>
-        </div>
-        <div class="cat">
-          <p class="cat-title">שונות</p>
-          <ul class="item-list" data-cat="misc"></ul>
-        </div>
-      </div>
+  <section id="checklist" class="collapsible">
+    <div class="section-head"><span class="ic">📋</span><h2>מה להביא לטיול</h2><span class="sec-chev">▾</span></div>
+    <div class="progress">
+      <span class="progress-label" id="progressLabel">0 / 0 ארוז</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+    <div class="cat">
+      <p class="cat-title">תעודות ומסמכים</p>
+      <ul class="item-list" data-cat="docs"></ul>
+    </div>
+    <div class="cat">
+      <p class="cat-title">ביגוד והנעלה</p>
+      <ul class="item-list" data-cat="clothes"></ul>
+    </div>
+    <div class="cat">
+      <p class="cat-title">אופציונלי</p>
+      <ul class="item-list" data-cat="optional"></ul>
+    </div>
+    <div class="cat">
+      <p class="cat-title">שונות</p>
+      <ul class="item-list" data-cat="misc"></ul>
     </div>
   </section>
 
@@ -521,12 +507,12 @@
 </main>
 
 <footer>
-  <p>טיול אופניים ורוגע לאוסטריה · 14–19.9.26</p>
+  <p>טיול אופניים ורוגע באוסטריה · 14–19.9.26</p>
 </footer>
 
 <script>
   (function () {
-    var ids = ['flights', 'hotels', 'lineup', 'gear'];
+    var ids = ['flights', 'hotels', 'lineup', 'gear', 'checklist'];
     var sections = {};
 
     ids.forEach(function (id) {
@@ -552,7 +538,6 @@
 
     function openFromHash() {
       var id = location.hash.replace('#', '');
-      if (id === 'checklist') id = 'gear';
       if (sections[id]) {
         ids.forEach(function (otherId) { sections[otherId].classList.remove('open'); });
         sections[id].classList.add('open');
@@ -609,12 +594,9 @@
     var KEY = 'at-packing-list';
     var state = {};
     try { state = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
-    var built = false;
     var total = 0;
 
     function buildChecklist() {
-      if (built) return;
-      built = true;
       Object.keys(ITEMS).forEach(function (cat) {
         var ul = document.querySelector('.item-list[data-cat="' + cat + '"]');
         ITEMS[cat].forEach(function (label, i) {
@@ -658,29 +640,7 @@
       document.getElementById('progressFill').style.width = (total ? (checked / total * 100) : 0) + '%';
     }
 
-    var toggle = document.getElementById('checklistToggle');
-    var panel = document.getElementById('checklistPanel');
-
-    function openChecklist() {
-      buildChecklist();
-      panel.style.display = 'block';
-      toggle.setAttribute('aria-expanded', 'true');
-    }
-    function closeChecklist() {
-      panel.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-
-    toggle.addEventListener('click', function () {
-      var open = panel.style.display !== 'none';
-      if (open) closeChecklist(); else openChecklist();
-    });
-
-    function checkHash() {
-      if (location.hash === '#checklist') openChecklist();
-    }
-    window.addEventListener('hashchange', checkHash);
-    checkHash();
+    buildChecklist();
   })();
 </script>
 </body>
