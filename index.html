@@ -194,15 +194,6 @@
   .info-card .opt { color: var(--ink-soft); }
   .info-card .opt::before { content: "אופציונלי · "; font-size: 0.78rem; color: var(--accent); }
 
-  .progress {
-    display: flex; align-items: center; gap: 0.7rem; margin: 0 0 1.2rem;
-    background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
-    padding: 0.5rem 0.9rem; box-shadow: var(--shadow);
-  }
-  .progress-bar { flex: 1; height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
-  .progress-fill { height: 100%; background: var(--accent2); width: 0%; transition: width 0.2s ease; }
-  .progress-label { font-size: 0.8rem; color: var(--ink-soft); white-space: nowrap; }
-
   .cat { margin-bottom: 1.3rem; }
   .cat-title {
     font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
@@ -471,10 +462,6 @@
 
   <section id="checklist" class="collapsible">
     <div class="section-head"><span class="ic">📋</span><h2>מה להביא לטיול</h2><span class="sec-chev">▾</span></div>
-    <div class="progress">
-      <span class="progress-label" id="progressLabel">0 / 0 ארוז</span>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    </div>
     <div class="cat">
       <p class="cat-title">תעודות ומסמכים</p>
       <ul class="item-list" data-cat="docs"></ul>
@@ -606,23 +593,15 @@
           cb.addEventListener('change', function () {
             li.classList.toggle('done', cb.checked);
             save(id, { checked: cb.checked });
-            updateProgress();
           });
           ul.appendChild(li);
         });
       });
-      updateProgress();
     }
 
     function save(id, val) {
       state[id] = val;
       try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
-    }
-
-    function updateProgress() {
-      var checked = document.querySelectorAll('.item input[type="checkbox"]:checked').length;
-      document.getElementById('progressLabel').textContent = checked + ' / ' + total + ' ארוז';
-      document.getElementById('progressFill').style.width = (total ? (checked / total * 100) : 0) + '%';
     }
 
     buildChecklist();
