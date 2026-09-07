@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>טיול אופניים, מיינדפולנס ורוגע באוסטריה</title>
+<title>טיול אופניים, מיינדפולנס ויוגה באוסטריה</title>
 <style>
   :root {
     --bg: #F6F2E7;
@@ -166,6 +166,12 @@
   .rec-card a { display: inline-block; margin-top: 0.5rem; font-size: 0.82rem; text-decoration: none; }
   .rec-card a:hover { text-decoration: underline; }
 
+  .info-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.2rem; box-shadow: var(--shadow); margin-bottom: 0.9rem; }
+  .info-card h3 { margin: 0 0 0.65rem; font-size: 1rem; display: flex; align-items: center; gap: 0.4rem; }
+  .info-card ul, .info-card ol { margin: 0; padding-inline-start: 1.25rem; display: flex; flex-direction: column; gap: 0.42rem; font-size: 0.92rem; }
+  .info-card .opt { color: var(--ink-soft); }
+  .info-card .opt::before { content: "אופציונלי · "; font-size: 0.78rem; color: var(--accent); }
+
   .checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
   .task {
     display: flex; align-items: center; gap: 0.7rem;
@@ -192,10 +198,12 @@
 <nav class="toc" aria-label="ניווט מהיר">
   <ul>
     <li><a href="#lineup"><span class="ic">🚴</span>לו״ז</a></li>
-    <li><a href="#contacts"><span class="ic">🆘</span>אנשי קשר וחירום</a></li>
+    <li><a href="#gear"><span class="ic">🎒</span>ציוד והתלבשות</a></li>
+    <li><a href="#rules"><span class="ic">🚦</span>כללי רכיבה</a></li>
+    <li><a href="#esim"><span class="ic">📱</span>סים ואינטרנט</a></li>
+    <li><a href="#contacts"><span class="ic">🆘</span>חירום</a></li>
     <li><a href="#book"><span class="ic">🎫</span>טיסות ולינה</a></li>
     <li><a href="#recs"><span class="ic">🍽️</span>ארוחות בקרמס</a></li>
-    <li><a href="#tasks"><span class="ic">✅</span>לפני שיוצאים</a></li>
   </ul>
 </nav>
 
@@ -211,10 +219,10 @@
       </g>
     </svg>
     <p class="eyebrow">🇦🇹 טיול קבוצתי מאורגן</p>
-    <h1 class="display">טיול אופניים, מיינדפולנס ורוגע באוסטריה</h1>
+    <h1 class="display">טיול אופניים, מיינדפולנס ויוגה באוסטריה</h1>
     <p class="sub">רכיבה נינוחה לאורך נהר הדנובה — מווינה דרך פסאו, שלוגן ולינץ, עד קרמס. נופים, מעבורות, ארוחות משותפות ורגעי שקט בדרך.</p>
     <div class="stat-row">
-      <div class="stat"><p class="stat-label">📅 תאריכים</p><p class="stat-num num">24–29.6.26</p></div>
+      <div class="stat"><p class="stat-label">📅 תאריכים</p><p class="stat-num num">14–19.9.26</p></div>
       <div class="stat"><p class="stat-label">🌙 לילות</p><p class="stat-num">5 לילות</p></div>
       <div class="stat"><p class="stat-label">🗺️ מסלול</p><p class="stat-num">וינה ← קרמס</p></div>
       <div class="stat"><p class="stat-label">🚴 רכיבה</p><p class="stat-num num">כ־120 ק״מ</p></div>
@@ -226,6 +234,7 @@
 
   <section id="lineup">
     <div class="section-head"><span class="ic">🚴</span><h2>לו״ז יומי</h2></div>
+    <p class="section-note">ייתכנו שינויים בהתאם למצב ומזג האוויר.</p>
 
     <div class="day" style="--rail:var(--accent)">
       <div class="day-rail"></div>
@@ -233,16 +242,16 @@
         <div class="day-head">
           <span class="day-num">יום 1</span>
           <h3 class="day-title display">טיסה ונחיתה בוינה</h3>
-          <span class="day-date num">רביעי 24.6</span>
+          <span class="day-date num">שני 14.9</span>
         </div>
         <ul class="agenda">
-          <li><time>16:15</time><div class="what">הגעה לשדה התעופה, צ׳ק־אין בטרמינל 3</div></li>
-          <li><time>19:15</time><div class="what">המראה לוינה — טיסת בלובירד BZ 313</div></li>
-          <li><time>22:00</time><div class="what">נחיתה בוינה, איסוף מזוודות ויציאה ברגל למלון מוקסי
+          <li><time>11:00</time><div class="what">הגעה לשדה התעופה, נפגשים בטרמינל 3, שער 32 — נוודא נוכחות</div></li>
+          <li><time>14:00</time><div class="what">המראה לוינה — טיסת בלובירד BZ 316</div></li>
+          <li><time>16:45</time><div class="what">נחיתה בוינה, איסוף מזוודות ויציאה ברגל למלון מוקסי
             <span class="loc"><a href="https://www.marriott.com/en-us/hotels/vieox-moxy-vienna-airport/overview/" target="_blank" rel="noopener">🏨 מלון MOXY Vienna Airport</a></span>
-            <span class="loc"><a href="https://maps.app.goo.gl/wKZPeD8ZEssPonoZ8" target="_blank" rel="noopener">📍 מסלול הליכה למלון</a></span>
           </div></li>
-          <li><time>22:30</time><div class="what">צ׳ק־אין וארוחה קלה במלון</div></li>
+          <li><time>17:30</time><div class="what">צ׳ק־אין וארוחה קלה במלון — באופן עצמאי, תשלום אישי</div></li>
+          <li><time>19:30</time><div class="what">מפגש קבוצתי</div></li>
         </ul>
       </div>
     </div>
@@ -253,30 +262,19 @@
         <div class="day-head">
           <span class="day-num">יום 2</span>
           <h3 class="day-title display">מווינה לפסאו</h3>
-          <span class="day-date num">חמישי 25.6</span>
+          <span class="day-date num">שלישי 15.9</span>
         </div>
         <ul class="agenda">
-          <li><time>07:00–10:00</time><div class="what">ארוחת בוקר</div></li>
-          <li><time>09:15</time><div class="what">צ׳ק־אאוט מהמלון</div></li>
-          <li><time>11:00</time><div class="what">יציאה להסעה עם המזוודות</div></li>
-          <li><time>13:15</time><div class="what">הפסקת התרעננות — Landzeit Ansfelden Nord
-            <span class="loc"><a href="https://goo.gl/maps/HDZ7KGdewVzSDWdg8" target="_blank" rel="noopener">📍 מיקום</a></span>
-          </div></li>
-          <li><time>14:00–15:00</time><div class="what">ארוחת צהריים — Losteria, פסאו <span class="tag tag-cancel">בוטל</span>
-            <span class="loc">☎️ <a href="tel:+4985196668562">+49 851 96668562</a> · <a href="https://losteria.net/en/restaurants/restaurant/passau/" target="_blank" rel="noopener">אתר המסעדה</a></span>
-          </div></li>
-          <li><time>15:30</time><div class="what">צ׳ק־אין במלון MK Hotel Passau
+          <li><time>07:00</time><div class="what">ארוחת בוקר</div></li>
+          <li><time>09:45</time><div class="what">צ׳ק־אאוט מהמלון</div></li>
+          <li><time>10:00</time><div class="what">יציאה להסעה עם המזוודות</div></li>
+          <li><time>12:00</time><div class="what">הפסקת קפה</div></li>
+          <li><time>14:30</time><div class="what">צ׳ק־אין במלון MK Hotel Passau
             <span class="loc"><a href="https://www.mkhotels.de/home/passau/en" target="_blank" rel="noopener">🏨 אתר המלון</a></span>
           </div></li>
-          <li><time>16:45</time><div class="what">יציאה לארוחת ערב — מסלול הליכה למסעדה, למבצר ודרך העיר חזרה (4.5 ק״מ)
-            <span class="loc"><a href="https://maps.app.goo.gl/3Z1GZG1FmsYB26kS6" target="_blank" rel="noopener">📍 מסלול ההליכה</a></span>
-          </div></li>
-          <li><time>17:00</time><div class="what">ארוחת ערב משותפת — דגים, בשר וצמחוני. Bayerischer Löwe Gastro GmbH <span class="tag tag-ok">מאושר</span>
-            <span class="loc">☎️ <a href="tel:+49851958010">+49 851 958010</a> · <a href="https://www.wirtshaus-passau.de/" target="_blank" rel="noopener">אתר המסעדה</a></span>
-          </div></li>
-          <li><time>21:00</time><div class="what">חזרה למלון
-            <span class="loc"><a href="https://maps.app.goo.gl/2jL29Wj7oEbmKEfu9" target="_blank" rel="noopener">📍 מסלול חזרה למלון</a></span>
-          </div></li>
+          <li><time>16:00</time><div class="what">יציאה לטיול רגלי, כ־5 ק״מ</div></li>
+          <li><time>19:30</time><div class="what">ארוחת ערב משותפת במסעדה</div></li>
+          <li><time>21:00</time><div class="what">חזרה למלון</div></li>
         </ul>
       </div>
     </div>
@@ -287,29 +285,22 @@
         <div class="day-head">
           <span class="day-num">יום 3</span>
           <h3 class="day-title display">רכיבה לשלוגן</h3>
-          <span class="day-date num">שישי 26.6</span>
+          <span class="day-date num">רביעי 16.9</span>
         </div>
-        <p class="day-sub">🚴 40 ק״מ · כ־5 שעות רכיבה</p>
+        <p class="day-sub">🚴 40 ק״מ</p>
         <ul class="agenda">
-          <li><time>07:00–08:30</time><div class="what">ארוחת בוקר</div></li>
-          <li><time>08:15</time><div class="what">מזוודות בנקודת האיסוף, צ׳ק־אאוט מהמלון</div></li>
-          <li><time>08:30</time><div class="what">קבלת אופניים, תדריך ויציאה לרכיבה</div></li>
-          <li><time>11:00</time><div class="what">הפסקת מדיטציה אחרי 23 ק״מ (5 דקות לפני המעבורת)</div></li>
-          <li><time>12:30</time><div class="what">הפסקת צהריים אחרי המעבורת, בצד שמאל בקומה השנייה (מדשאות בחזית) — Hotel Restaurant Luger <span class="tag tag-ok">מאושר</span>
-            <span class="loc">☎️ <a href="tel:+437285507">+43 7285 507</a> · <a href="https://www.gasthof-luger.at/kontakt/" target="_blank" rel="noopener">אתר המסעדה</a></span>
-            <span class="loc"><a href="https://maps.app.goo.gl/65nDon2EYPeuCRbS6" target="_blank" rel="noopener">📍 מיקום המסעדה</a></span>
+          <li><time>07:00</time><div class="what">ארוחת בוקר</div></li>
+          <li><time>09:00</time><div class="what">מזוודות בנקודת האיסוף</div></li>
+          <li><time>09:30</time><div class="what">צ׳ק־אאוט מהמלון, קבלת אופניים, תדריך ויציאה לטיול — <strong>חשוב להביא נשנושים לדרך</strong></div></li>
+          <li><time>13:30</time><div class="what">הפסקת צהריים בבית קפה</div></li>
+          <li><time>16:30</time><div class="what">מגיעים לשלוגן</div></li>
+          <li><time>17:00</time><div class="what">יוצאים למלון</div></li>
+          <li><time>17:30</time><div class="what">צ׳ק־אין במלון רויטה
+            <span class="loc"><a href="https://www.kocher.at/" target="_blank" rel="noopener">🏨 אתר המלון</a></span>
           </div></li>
-          <li><time>15:00</time><div class="what">הגעה למלון בשלוגן — River Resort Donauschlinge, צ׳ק־אין עצמאי
-            <span class="loc"><a href="https://www.donauschlinge.at/de/index.html" target="_blank" rel="noopener">🏨 אתר המלון</a></span>
-          </div></li>
-          <li><time>17:30</time><div class="what">יציאה לטיול רגלי המשקיף על עיקול שלוגן</div></li>
           <li><time>19:30</time><div class="what">ארוחת ערב משותפת במלון</div></li>
+          <li><time>21:00</time><div class="what">מפגש חברתי</div></li>
         </ul>
-        <p class="section-note" style="margin:0.8rem 0 0">
-          📍 <a href="https://maps.app.goo.gl/GFK2xj59hLH5wvXx9" target="_blank" rel="noopener">מסלול לפרי (24 ק״מ)</a> ·
-          📍 <a href="https://maps.app.goo.gl/Jr2XwB27ALmpCWZ38" target="_blank" rel="noopener">מסלול לשלוגן (16 ק״מ)</a> ·
-          🚴 <a href="https://www.outdooractive.com/he/r/254560398" target="_blank" rel="noopener">המסלול המלא ב-outdooractive</a>
-        </p>
       </div>
     </div>
 
@@ -319,33 +310,24 @@
         <div class="day-head">
           <span class="day-num">יום 4</span>
           <h3 class="day-title display">רכיבה ללינץ</h3>
-          <span class="day-date num">שבת 27.6</span>
+          <span class="day-date num">חמישי 17.9</span>
         </div>
-        <p class="day-sub">🚴 47 ק״מ · כ־6 שעות רכיבה</p>
+        <p class="day-sub">🚴 47 ק״מ</p>
         <ul class="agenda">
-          <li><time>07:00–08:30</time><div class="what">ארוחת בוקר</div></li>
-          <li><time>08:15</time><div class="what">מזוודות בנקודת האיסוף, צ׳ק־אאוט מהמלון</div></li>
-          <li><time>08:30</time><div class="what">יציאה לרכיבה</div></li>
-          <li><time>10:30</time><div class="what">עצירת מדיטציה ונשנושים אחרי 18 ק״מ (המוט למתיחות והברווזים)</div></li>
-          <li><time>13:00</time><div class="what">הפסקת צהריים — קפה-מסעדה WÖGERERs <span class="tag tag-ok">מאושר</span>
-            <span class="loc">☎️ <a href="tel:+4372337223">+43 7233 7223</a></span>
-            <span class="loc"><a href="https://maps.app.goo.gl/NAED8S3p7kQW6VZx6" target="_blank" rel="noopener">📍 מיקום (כ־30 ק״מ מהמלון)</a></span>
+          <li><time>07:00</time><div class="what">ארוחת בוקר</div></li>
+          <li><time>09:00</time><div class="what">מזוודות בנקודת האיסוף וצ׳ק־אאוט מהמלון</div></li>
+          <li><time>09:30</time><div class="what">יציאה להסעה לשלוגן</div></li>
+          <li><time>10:00</time><div class="what">טיול רגלי לתצפית שלוגן — <strong>חשוב להביא נשנושים לדרך</strong></div></li>
+          <li><time>12:00</time><div class="what">יציאה לרכיבה</div></li>
+          <li><time>13:30</time><div class="what">עצירה להפסקת מדיטציה ונשנושים</div></li>
+          <li><time>15:00</time><div class="what">הפסקת צהריים בבית קפה־מסעדה</div></li>
+          <li><time>18:00</time><div class="what">שייט על הדנובה ללינץ, ורכיבה למלון</div></li>
+          <li><time>19:00</time><div class="what">צ׳ק־אין במלון פארק אין רדיסון, לינץ
+            <span class="loc"><a href="https://www.radissonhotels.com/en-us/hotels/park-inn-linz" target="_blank" rel="noopener">🏨 אתר המלון</a></span>
           </div></li>
-          <li><time>14:30</time><div class="what">יציאה לרכיבה כדי להספיק למעבורת (כ־14 ק״מ, כשעת רכיבה)</div></li>
-          <li><time>16:00</time><div class="what">מעבורת
-            <span class="loc"><a href="https://goo.gl/maps/QbcVWdEsNpNAC8Ni9" target="_blank" rel="noopener">📍 מיקום המעבורת</a></span>
-          </div></li>
-          <li><time>17:00</time><div class="what">הגעה למלון Donauwelle בלינץ
-            <span class="loc"><a href="https://linz.twhotels.at/en/home/" target="_blank" rel="noopener">🏨 אתר המלון</a></span>
-          </div></li>
-          <li><time>20:00</time><div class="what">ארוחת ערב — לבקש בקבלה להקדים</div></li>
+          <li><time>20:00</time><div class="what">ארוחת ערב</div></li>
+          <li><time>21:15</time><div class="what">מפגש חברתי</div></li>
         </ul>
-        <p class="section-note" style="margin:0.8rem 0 0">
-          📍 <a href="https://maps.app.goo.gl/4ECSk5hEiStNd8iw7" target="_blank" rel="noopener">מסלול שלוגן–מעבורת (44 ק״מ)</a> ·
-          📍 <a href="https://maps.app.goo.gl/gDkg9qimNMKt4geB6" target="_blank" rel="noopener">מנקודת ההורדה למלון</a> ·
-          📍 <a href="https://maps.app.goo.gl/Bz3dDkm9jVU7E2oa6" target="_blank" rel="noopener">מהגשר בלינץ למלון</a> ·
-          🚴 <a href="https://www.outdooractive.com/he/r/254560398" target="_blank" rel="noopener">המסלול המלא ב-outdooractive</a>
-        </p>
       </div>
     </div>
 
@@ -355,28 +337,22 @@
         <div class="day-head">
           <span class="day-num">יום 5</span>
           <h3 class="day-title display">רכיבה לקרמס</h3>
-          <span class="day-date num">ראשון 28.6</span>
+          <span class="day-date num">שישי 18.9</span>
         </div>
-        <p class="day-sub">🚴 33 ק״מ · כ־4 שעות רכיבה</p>
+        <p class="day-sub">🚴 33 ק״מ</p>
         <ul class="agenda">
-          <li><time>07:00–08:30</time><div class="what">ארוחת בוקר</div></li>
-          <li><time>08:15</time><div class="what">צ׳ק־אאוט, העלאת אופניים ומזוודות להסעה — <strong>לא לשכוח להחזיר מטענים לתרמיל האופניים</strong></div></li>
-          <li><time>08:30</time><div class="what">נסיעה למלק (כשעה) — משם מתחילה הרכיבה
-            <span class="loc"><a href="https://maps.app.goo.gl/roGe1QFZXYgjcwLr7" target="_blank" rel="noopener">📍 נקודת ההורדה במלק</a></span>
-          </div></li>
-          <li><time>10:00</time><div class="what">יציאה לרכיבה</div></li>
-          <li><time>11:00</time><div class="what">עצירה בבית קפה עם נוף לדנובה (כ־7 ק״מ רכיבה)
-            <span class="loc"><a href="https://maps.app.goo.gl/a1J7fgrNQkTLRxbt5" target="_blank" rel="noopener">📍 מיקום בית הקפה</a></span>
-          </div></li>
-          <li><time>12:00</time><div class="what">דורנשטיין — הפסקת צהריים (כ־20 ק״מ רכיבה מבית הקפה)</div></li>
-          <li><time>14:00</time><div class="what">יציאה לקרמס (כ־6.5 ק״מ, עצירה קצרה לתדריך עלייה)</div></li>
-          <li><time>15:00</time><div class="what">הגעה למלון Steigenberger בקרמס
+          <li><time>07:00</time><div class="what">ארוחת בוקר</div></li>
+          <li><time>09:30</time><div class="what">הוצאת המזוודות והאופניים להסעה — <strong>לא לשכוח להחזיר מטענים לתרמיל האופניים</strong></div></li>
+          <li><time>10:00</time><div class="what">נסיעה למלק (כשעה)</div></li>
+          <li><time>11:30</time><div class="what">יציאה לרכיבה</div></li>
+          <li><time>14:30</time><div class="what">טיול בדורנשטיין</div></li>
+          <li><time>16:00</time><div class="what">יציאה לקרמס</div></li>
+          <li><time>17:00</time><div class="what">צ׳ק־אין במלון סטייגנברגר — זמן חופשי בספא ובבריכה
             <span class="loc"><a href="https://hrewards.com/de/steigenberger-hotel-spa-krems" target="_blank" rel="noopener">🏨 אתר המלון</a></span>
           </div></li>
           <li><time>19:30</time><div class="what">ארוחת ערב</div></li>
           <li><time>21:00</time><div class="what">מפגש חברתי</div></li>
         </ul>
-        <p class="section-note" style="margin:0.8rem 0 0">📍 <a href="https://maps.app.goo.gl/bPu4TSvAcDMXJN499" target="_blank" rel="noopener">מסלול מלק–קרמס</a></p>
       </div>
     </div>
 
@@ -386,42 +362,88 @@
         <div class="day-head">
           <span class="day-num">יום 6</span>
           <h3 class="day-title display">חזרה לארץ</h3>
-          <span class="day-date num">שני 29.6</span>
+          <span class="day-date num">שבת 19.9</span>
         </div>
         <ul class="agenda">
-          <li><time>07:00–10:00</time><div class="what">ארוחת בוקר</div></li>
-          <li><time>09:30</time><div class="what">אופציה: טיול רגלי ומפגש סיום בקרמס <span class="tag tag-opt">אופציונלי</span>
-            <span class="loc">🥾 <a href="https://www.komoot.com/smarttour/27885499" target="_blank" rel="noopener">מסלול בקומוט — 6.53 ק״מ, עלייה/ירידה 200 מ׳</a></span>
-            <span class="loc"><a href="https://maps.app.goo.gl/KY9QTHW2WWsnmKpx6" target="_blank" rel="noopener">📍 המסלול בגוגל מפות</a></span>
-          </div></li>
-          <li><time>11:00</time><div class="what">צ׳ק־אאוט מהמלון, הנחת מזוודות בשמירה ומפגש סיום</div></li>
+          <li><time>07:00</time><div class="what">ארוחת בוקר</div></li>
+          <li><time>09:00</time><div class="what">יציאה לטיול</div></li>
+          <li><time>11:00</time><div class="what">צ׳ק־אאוט מהמלון, הנחת המזוודות בשמירה</div></li>
+          <li><time>12:00</time><div class="what">מפגש סיום</div></li>
           <li><time>13:30</time><div class="what">הסעה לשדה התעופה (כשעה נסיעה)</div></li>
-          <li><time>17:45</time><div class="what">טיסת חזור לתל אביב — בלובירד BZ 317. צ׳ק־אין קבוצתי, בדלפק עם הנחת המזוודה</div></li>
+          <li><time>17:45</time><div class="what">המראה מוינה, נחיתה 22:10 בתל אביב — בלובירד BZ 317. צ׳ק־אין קבוצתי, בדלפק עם הנחת המזוודה</div></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="contacts">
-    <div class="section-head"><span class="ic">🆘</span><h2>אנשי קשר וחירום</h2></div>
-    <p class="section-note">מספרים חשובים לשמור בטלפון לפני היציאה.</p>
-    <div class="meet-grid">
-      <div class="meet-card">
-        <h3>🧳 PEDALO — הסעת מזוודות</h3>
-        <div class="meet-row"><span class="k">מזוודות עד</span><span class="v num">09:00</span></div>
-        <div class="meet-row"><span class="k">קו חם (גם וואטסאפ)</span><span class="v num"><a href="tel:+436765008856">+43 676 500 8856</a></span></div>
-        <div class="meet-row"><span class="k">שעות מענה</span><span class="v">יומי 08:00–20:00</span></div>
-        <div class="meet-row"><span class="k">משרד</span><span class="v num"><a href="tel:+437717700">+43 7717 700</a></span></div>
+  <section id="gear">
+    <div class="section-head"><span class="ic">🎒</span><h2>ציוד והתלבשות</h2></div>
+
+    <div class="info-card">
+      <h3>👕 איך להתלבש לרכיבה</h3>
+      <ul>
+        <li>ביגוד בשכבות בהתאם למזג האוויר (יעודכן על בסיס יומי)</li>
+        <li>קסדה, כובע, משקפיים, נעלי ספורט, מעיל רוח/גשם</li>
+        <li class="opt">כיסוי מרופד לכיסא, מכנסי ג׳ל, כפפות רכיבה</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>🎒 מה לקחת בתיק לרכיבה היומית</h3>
+      <p class="section-note" style="margin:0 0 0.6rem">יש באופניים תיק וסבל.</p>
+      <ul>
+        <li>בגדים נוספים בהתאם למזג האוויר</li>
+        <li>מעיל רוח/גשם לכל מקרה</li>
+        <li>כובע, קסדה, מגבת לשכיבה על הגב</li>
+        <li>ערכת עזרה ראשונה אישית (אקמול, פלסטר וכו׳)</li>
+        <li>מים 1.5 ליטר מהברז (2 בקבוקים של 750 מ״ל), נייר טואלט, שקית לזבל</li>
+        <li>נשנושים לדרך (סנדוויץ׳, גרנולה בר, תמרים, אגוזים וכו׳)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="section-head"><span class="ic">🚦</span><h2>כללי התנהגות ברכיבה</h2></div>
+    <div class="info-card">
+      <ul>
+        <li>לדייק בזמנים — כבוד הדדי</li>
+        <li>הפסקת מים כל חצי שעה בערך</li>
+        <li>יהיו הפסקות למנוחה, מדיטציה ואוכל</li>
+        <li>הרכיבה נעשית בין רויטל ויונתן, כשכל הקבוצה רוכבת בינינו</li>
+        <li>מעברי כבישים ייעשו בתיאום קבוצתי</li>
+        <li>רכיבה בטור — אחד אחרי השני, עם שמירת מרחק ביטחון לבלימה</li>
+        <li>מי שעוצר נצמד לימין ובשולי הדרך, תוך שימת לב שאין רוכב מאחור</li>
+        <li>ברכיבה עירונית שומרים על טור ונשארים ערניים במיוחד</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="esim">
+    <div class="section-head"><span class="ic">📱</span><h2>סים ואינטרנט</h2></div>
+    <p class="section-note">מומלץ לרכוש בארץ מראש סים דיגיטלי (eSIM) להתקנה בטלפון — מסלול של כ־5GB מספיק.</p>
+    <div class="rec-grid">
+      <div class="rec-card">
+        <p class="rec-kind">eSIM</p>
+        <h3>Airalo</h3>
+        <a href="https://www.airalo.com/he/austria-esim" target="_blank" rel="noopener">מסלולים ורכישה</a>
       </div>
+      <div class="rec-card">
+        <p class="rec-kind">eSIM</p>
+        <h3>eSimo</h3>
+        <a href="https://esimo.io/product/austria-only-data" target="_blank" rel="noopener">מסלולים ורכישה</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="section-head"><span class="ic">🆘</span><h2>חירום</h2></div>
+    <p class="section-note">מספרי החירום הארציים באוסטריה — תקפים לאורך כל הטיול.</p>
+    <div class="meet-grid">
       <div class="meet-card">
         <h3>🚨 חירום באוסטריה</h3>
         <div class="meet-row"><span class="k">משטרה (Polizei)</span><span class="v num"><a href="tel:133">133</a></span></div>
         <div class="meet-row"><span class="k">חובשים (Rettungsdienst)</span><span class="v num"><a href="tel:144">144</a></span></div>
         <div class="meet-row"><span class="k">חילוץ הרים (Bergrettung)</span><span class="v num"><a href="tel:140">140</a></span></div>
-      </div>
-      <div class="meet-card">
-        <h3>🧭 אפליקציית ניווט לטיול</h3>
-        <div class="meet-row"><span class="k">קישור</span><span class="v"><a href="https://trip.guibo.travel/BDxLsI" target="_blank" rel="noopener">trip.guibo.travel</a></span></div>
       </div>
     </div>
   </section>
@@ -429,52 +451,55 @@
   <section id="book">
     <div class="section-head"><span class="ic">🎫</span><h2>טיסות ולינה</h2></div>
     <p class="book-sub">✈️ טיסות</p>
+    <p class="section-note" style="margin:-0.6rem 0 1rem">כרטיסים יישלחו במייל כמה ימים לפני היציאה.</p>
     <div class="book">
-      <div class="book-head"><h3>טיסת הלוך — בלובירד BZ 313</h3></div>
+      <div class="book-head"><h3>טיסת הלוך — בלובירד BZ 316</h3></div>
       <dl>
         <div><dt>מסלול</dt><dd>תל אביב ← וינה (טרמינל 3)</dd></div>
-        <div><dt>המראה</dt><dd class="num">24.6.26, 19:15</dd></div>
+        <div><dt>המראה</dt><dd class="num">14.9.26, 14:00</dd></div>
+        <div><dt>נחיתה</dt><dd class="num">14.9.26, 16:45</dd></div>
       </dl>
     </div>
     <div class="book">
       <div class="book-head"><h3>טיסת חזור — בלובירד BZ 317</h3></div>
       <dl>
         <div><dt>מסלול</dt><dd>וינה ← תל אביב</dd></div>
-        <div><dt>המראה</dt><dd class="num">29.6.26, 17:45</dd></div>
+        <div><dt>המראה</dt><dd class="num">19.9.26, 17:45</dd></div>
+        <div><dt>נחיתה</dt><dd class="num">19.9.26, 22:10</dd></div>
       </dl>
     </div>
 
     <p class="book-sub" style="margin-top:1.4rem">🏨 מלונות</p>
     <div class="book">
       <div class="book-head"><h3>וינה — MOXY Vienna Airport</h3></div>
-      <dl><div><dt>לילה</dt><dd class="num">24.6</dd></div></dl>
+      <dl><div><dt>לילה</dt><dd class="num">14.9</dd></div></dl>
       <p style="margin:0.5rem 0 0"><a href="https://www.marriott.com/en-us/hotels/vieox-moxy-vienna-airport/overview/" target="_blank" rel="noopener">אתר המלון</a></p>
     </div>
     <div class="book">
       <div class="book-head"><h3>פסאו — MK Hotel</h3></div>
-      <dl><div><dt>לילה</dt><dd class="num">25.6</dd></div></dl>
+      <dl><div><dt>לילה</dt><dd class="num">15.9</dd></div></dl>
       <p style="margin:0.5rem 0 0"><a href="https://www.mkhotels.de/home/passau/en" target="_blank" rel="noopener">אתר המלון</a></p>
     </div>
     <div class="book">
-      <div class="book-head"><h3>שלוגן — Hotel Donauschlinge</h3></div>
-      <dl><div><dt>לילה</dt><dd class="num">26.6</dd></div></dl>
-      <p style="margin:0.5rem 0 0"><a href="https://www.donauschlinge.at/de/index.html" target="_blank" rel="noopener">אתר המלון</a></p>
+      <div class="book-head"><h3>שלוגן — מלון רויטה</h3></div>
+      <dl><div><dt>לילה</dt><dd class="num">16.9</dd></div></dl>
+      <p style="margin:0.5rem 0 0"><a href="https://www.kocher.at/" target="_blank" rel="noopener">אתר המלון</a></p>
     </div>
     <div class="book">
-      <div class="book-head"><h3>לינץ — Hotel Donauwelle</h3></div>
-      <dl><div><dt>לילה</dt><dd class="num">27.6</dd></div></dl>
-      <p style="margin:0.5rem 0 0"><a href="https://linz.twhotels.at/en/home/" target="_blank" rel="noopener">אתר המלון</a></p>
+      <div class="book-head"><h3>לינץ — פארק אין רדיסון</h3></div>
+      <dl><div><dt>לילה</dt><dd class="num">17.9</dd></div></dl>
+      <p style="margin:0.5rem 0 0"><a href="https://www.radissonhotels.com/en-us/hotels/park-inn-linz" target="_blank" rel="noopener">אתר המלון</a></p>
     </div>
     <div class="book">
       <div class="book-head"><h3>קרמס — Steigenberger Hotel & Spa</h3></div>
-      <dl><div><dt>לילה</dt><dd class="num">28.6</dd></div></dl>
+      <dl><div><dt>לילה</dt><dd class="num">18.9</dd></div></dl>
       <p style="margin:0.5rem 0 0"><a href="https://hrewards.com/de/steigenberger-hotel-spa-krems" target="_blank" rel="noopener">אתר המלון</a></p>
     </div>
   </section>
 
   <section id="recs">
-    <div class="section-head"><span class="ic">🍽️</span><h2>ארוחות בשבת בקרמס</h2></div>
-    <p class="section-note">יום 4 (שבת 27.6) — אין ארוחה משותפת מתוכננת בצהריים; אפשרויות לאורך המסלול לבחירה אישית.</p>
+    <div class="section-head"><span class="ic">🍽️</span><h2>ארוחות בקרמס</h2></div>
+    <p class="section-note">אפשרויות לאורך המסלול בקרמס לבחירה אישית, לימי שאין ארוחה משותפת מתוכננת.</p>
     <div class="rec-grid">
       <div class="rec-card">
         <p class="rec-kind">קפה בעיר העתיקה</p>
@@ -507,42 +532,11 @@
     </div>
   </section>
 
-  <section id="tasks">
-    <div class="section-head"><span class="ic">✅</span><h2>לפני שיוצאים</h2></div>
-    <ul class="checklist" id="checklist">
-      <li class="task"><input type="checkbox" id="t1"><label for="t1">לוודא תוקף דרכון (מעל 6 חודשים מיום החזרה)</label></li>
-      <li class="task"><input type="checkbox" id="t2"><label for="t2">להוריד מראש את אפליקציית הניווט של הטיול (trip.guibo.travel)</label></li>
-      <li class="task"><input type="checkbox" id="t3"><label for="t3">לשמור בטלפון את מספרי PEDALO ומספרי החירום באוסטריה</label></li>
-      <li class="task"><input type="checkbox" id="t4"><label for="t4">להוריד כרטיסי טיסה לטלפון</label></li>
-      <li class="task"><input type="checkbox" id="t5"><label for="t5">בגדי רכיבה, קסדה אישית (אם יש), ומעיל גשם קל</label></li>
-      <li class="task"><input type="checkbox" id="t6"><label for="t6">קרם הגנה, מילוי מים ותרמיל אופניים קטן לציוד יומי</label></li>
-      <li class="task"><input type="checkbox" id="t7"><label for="t7">מטענים וכבלים — לזכור להחזיר לתרמיל האופניים כל בוקר (יום 5)</label></li>
-      <li class="task"><input type="checkbox" id="t8"><label for="t8">מזוודות בנקודת האיסוף עד השעה שנקבעה — בכל בוקר</label></li>
-    </ul>
-  </section>
-
 </main>
 
 <footer>
-  <p>טיול אופניים, מיינדפולנס ורוגע באוסטריה · 24–29.6.26</p>
+  <p>טיול אופניים, מיינדפולנס ויוגה באוסטריה · 14–19.9.26</p>
 </footer>
 
-<a class="fab-call" href="tel:+436765008856"><span class="ic">📞</span>PEDALO</a>
-
-<script>
-  (function () {
-    var KEY = 'at-trip-checklist';
-    var saved = {};
-    try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
-    document.querySelectorAll('.task input[type="checkbox"]').forEach(function (cb) {
-      if (saved[cb.id]) { cb.checked = true; cb.closest('.task').classList.add('done'); }
-      cb.addEventListener('change', function () {
-        cb.closest('.task').classList.toggle('done', cb.checked);
-        saved[cb.id] = cb.checked;
-        try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
-      });
-    });
-  })();
-</script>
 </body>
 </html>
