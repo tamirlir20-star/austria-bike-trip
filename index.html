@@ -46,13 +46,13 @@
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: "Segoe UI", Arial, "Helvetica Neue", -apple-system, system-ui, sans-serif;
+    font-family: Arial, "Segoe UI", "Helvetica Neue", sans-serif;
     font-weight: 500;
     line-height: 1.55;
     direction: rtl;
     text-align: right;
   }
-  .display { font-family: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif; font-weight: 700; }
+  .display { font-family: Arial, "Segoe UI", "Helvetica Neue", sans-serif; font-weight: 700; }
   .num, time, .code {
     font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
     font-variant-numeric: tabular-nums;
@@ -73,7 +73,7 @@
   nav.toc ul { list-style: none; display: flex; gap: 0.25rem; margin: 0; padding: 0.55rem 1rem; min-width: max-content; }
   nav.toc a {
     display: flex; align-items: center; gap: 0.4rem;
-    text-decoration: none; color: var(--ink); font-family: Arial, "Segoe UI", sans-serif;
+    text-decoration: none; color: var(--ink);
     font-size: 0.92rem; font-weight: 700;
     padding: 0.45rem 0.8rem; border-radius: 999px; white-space: nowrap;
   }
@@ -122,6 +122,7 @@
 
   section { padding: 2.2rem 0; border-bottom: 1px solid var(--line); }
   section:last-of-type { border-bottom: none; }
+  section.collapsible { padding: 1.4rem 0; }
   .section-head { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.3rem; }
   .section-head .ic {
     font-size: 1.4rem; line-height: 1; display: flex; align-items: center; justify-content: center;
@@ -129,6 +130,17 @@
   }
   h2 { font-size: 1.28rem; margin: 0; }
   .section-note { color: var(--ink-soft); font-size: 0.9rem; margin: -0.7rem 0 1.3rem; }
+
+  .collapsible > .section-head {
+    cursor: pointer; user-select: none; margin: 0; padding: 0.3rem 0;
+  }
+  .collapsible > .section-head .sec-chev {
+    margin-inline-start: auto; font-size: 1.1rem; color: var(--ink-soft);
+    transition: transform 0.2s ease;
+  }
+  .collapsible.open > .section-head .sec-chev { transform: rotate(180deg); }
+  .section-body { display: none; margin-top: 1.3rem; }
+  .collapsible.open > .section-body { display: block; }
 
   .day {
     display: grid; grid-template-columns: 5px 1fr; gap: 1.1rem;
@@ -269,8 +281,8 @@
 
 <main class="wrap">
 
-  <section id="flights">
-    <div class="section-head"><span class="ic">✈️</span><h2>טיסות</h2></div>
+  <section id="flights" class="collapsible">
+    <div class="section-head"><span class="ic">✈️</span><h2>טיסות</h2><span class="sec-chev">▾</span></div>
     <p class="section-note" style="margin-top:-0.7rem">כרטיסים יישלחו במייל כמה ימים לפני היציאה.</p>
     <div class="book">
       <div class="book-head"><h3>טיסת הלוך — בלובירד BZ 316</h3></div>
@@ -290,8 +302,8 @@
     </div>
   </section>
 
-  <section id="hotels">
-    <div class="section-head"><span class="ic">🏨</span><h2>בתי מלון</h2></div>
+  <section id="hotels" class="collapsible">
+    <div class="section-head"><span class="ic">🏨</span><h2>בתי מלון</h2><span class="sec-chev">▾</span></div>
     <div class="book">
       <div class="book-head"><h3>וינה — MOXY Vienna Airport</h3></div>
       <dl><div><dt>לילה</dt><dd class="num">14.9</dd></div></dl>
@@ -319,8 +331,8 @@
     </div>
   </section>
 
-  <section id="lineup">
-    <div class="section-head"><span class="ic">🚴</span><h2>לו״ז יומי</h2></div>
+  <section id="lineup" class="collapsible">
+    <div class="section-head"><span class="ic">🚴</span><h2>לו״ז יומי</h2><span class="sec-chev">▾</span></div>
     <p class="section-note">ייתכנו שינויים בהתאם למצב ומזג האוויר.</p>
 
     <div class="day" style="--rail:var(--accent)">
@@ -463,8 +475,8 @@
     </div>
   </section>
 
-  <section id="gear">
-    <div class="section-head"><span class="ic">🎒</span><h2>ציוד ולבוש</h2></div>
+  <section id="gear" class="collapsible">
+    <div class="section-head"><span class="ic">🎒</span><h2>ציוד ולבוש</h2><span class="sec-chev">▾</span></div>
 
     <div class="info-card">
       <h3>👕 איך להתלבש לרכיבה</h3>
@@ -572,6 +584,43 @@
 </footer>
 
 <script>
+  (function () {
+    var ids = ['flights', 'hotels', 'lineup', 'gear'];
+    var sections = {};
+
+    ids.forEach(function (id) {
+      var section = document.getElementById(id);
+      var head = section.querySelector('.section-head');
+      var body = document.createElement('div');
+      body.className = 'section-body';
+      var node = head.nextSibling;
+      while (node) {
+        var next = node.nextSibling;
+        body.appendChild(node);
+        node = next;
+      }
+      section.appendChild(body);
+      sections[id] = section;
+
+      head.addEventListener('click', function () {
+        var isOpen = section.classList.contains('open');
+        ids.forEach(function (otherId) { sections[otherId].classList.remove('open'); });
+        if (!isOpen) section.classList.add('open');
+      });
+    });
+
+    function openFromHash() {
+      var id = location.hash.replace('#', '');
+      if (id === 'checklist') id = 'gear';
+      if (sections[id]) {
+        ids.forEach(function (otherId) { sections[otherId].classList.remove('open'); });
+        sections[id].classList.add('open');
+      }
+    }
+    window.addEventListener('hashchange', openFromHash);
+    openFromHash();
+  })();
+
   (function () {
     var ITEMS = {
       docs: [
