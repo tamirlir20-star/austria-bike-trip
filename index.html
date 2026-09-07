@@ -216,14 +216,8 @@
   }
   .item input[type="checkbox"] { width: 19px; height: 19px; accent-color: var(--accent2); flex: none; margin-top: 0.15rem; }
   .item-main { flex: 1; min-width: 0; }
-  .item-label { font-size: 0.94rem; cursor: pointer; }
+  .item-label { font-size: 0.94rem; font-weight: 700; cursor: pointer; }
   .item.done .item-label { color: var(--ink-soft); text-decoration: line-through; }
-  .item-note {
-    width: 100%; margin-top: 0.35rem; font: inherit; font-size: 0.82rem;
-    padding: 0.3rem 0.5rem; border-radius: 8px; border: 1px solid var(--line);
-    background: var(--bg); color: var(--ink);
-  }
-  .item-note::placeholder { color: var(--ink-soft); opacity: 0.7; }
 
   footer { padding: 2rem 0 1rem; color: var(--ink-soft); font-size: 0.82rem; text-align: center; }
 </style>
@@ -609,19 +603,13 @@
             '<input type="checkbox" id="' + id + '"' + (saved.checked ? ' checked' : '') + '>' +
             '<div class="item-main">' +
               '<label class="item-label" for="' + id + '"></label>' +
-              '<input type="text" class="item-note" placeholder="הערה (אופציונלי)" value="">' +
             '</div>';
           li.querySelector('.item-label').textContent = label;
-          var noteInput = li.querySelector('.item-note');
-          noteInput.value = saved.note || '';
           var cb = li.querySelector('input[type="checkbox"]');
           cb.addEventListener('change', function () {
             li.classList.toggle('done', cb.checked);
-            save(id, { checked: cb.checked, note: noteInput.value });
+            save(id, { checked: cb.checked });
             updateProgress();
-          });
-          noteInput.addEventListener('input', function () {
-            save(id, { checked: cb.checked, note: noteInput.value });
           });
           ul.appendChild(li);
         });
